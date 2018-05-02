@@ -1457,7 +1457,7 @@
 /* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar redux = __webpack_require__(236);\nconsole.log('starting redux');//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjM1LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2FwcC9yZWR1eC1leGFtcGxlLmpzeD8wNTA4Il0sInNvdXJjZXNDb250ZW50IjpbInZhciByZWR1eCA9IHJlcXVpcmUoJ3JlZHV4Jyk7XG5jb25zb2xlLmxvZygnc3RhcnRpbmcgcmVkdXgnKTtcblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBhcHAvcmVkdXgtZXhhbXBsZS5qc3giXSwibWFwcGluZ3MiOiI7O0FBQUE7Iiwic291cmNlUm9vdCI6IiJ9");
+	eval("'use strict';\n\nvar redux = __webpack_require__(236);\nconsole.log('starting redux');\n\nvar store = redux.createStore();//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjM1LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2FwcC9yZWR1eC1leGFtcGxlLmpzeD8wNTA4Il0sInNvdXJjZXNDb250ZW50IjpbInZhciByZWR1eCA9IHJlcXVpcmUoJ3JlZHV4Jyk7XG5jb25zb2xlLmxvZygnc3RhcnRpbmcgcmVkdXgnKTtcblxudmFyIHN0b3JlID0gcmVkdXguY3JlYXRlU3RvcmUoKTtcblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBhcHAvcmVkdXgtZXhhbXBsZS5qc3giXSwibWFwcGluZ3MiOiI7O0FBQUE7QUFDQTtBQUNBOyIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ }),
 /* 236 */
