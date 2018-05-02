@@ -7,9 +7,23 @@ var stateDefault = {
     todos: []
 };
 var reducer = (state = stateDefault, action) => {
-    return state;
+    switch (action.type) {
+        case 'CHANGE_SEARCH_TEXT':
+            return {
+                ...state,
+                searchText: action.searchText
+            };
+        default:
+            return state;
+    }
 };
 var store = redux.createStore(reducer);
 
-var currentState = store.getState();
-console.log('currentState', currentState);
+console.log('currentState', store.getState());
+
+var action = {
+    type: 'CHANGE_SEARCH_TEXT',
+    searchText: 'mayanka'
+};
+store.dispatch(action);
+console.log('currentState', store.getState());
