@@ -1,14 +1,6 @@
 var redux = require('redux');
 console.log('starting redux');
 
-var stateDefault = {
-    name: 'Anonymous',
-    hobbies: [],
-    movies: []
-};
-var nextHobbyId = 1;
-var nextMovieId = 1;
-
 var nameReducer = (state = 'Anonymous', action) => {
     switch (action.type) {
         case 'CHANGE_NAME':
@@ -17,7 +9,14 @@ var nameReducer = (state = 'Anonymous', action) => {
             return state;
     }
 };
+var changeName = (name) => {
+    return {
+        type: 'CHANGE_NAME',
+        name
+    }
+};
 
+var nextHobbyId = 1;
 var hobbiesReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_HOBBY':
@@ -34,7 +33,20 @@ var hobbiesReducer = (state = [], action) => {
             return state;
     }
 };
+var addHobby = (hobby) => {
+    return {
+        type: 'ADD_HOBBY',
+        hobby
+    }
+};
+var removeHobby = (id) => {
+    return {
+        type: 'REMOVE_HOBBY',
+        id
+    }
+};
 
+var nextMovieId = 1;
 var moviesReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_MOVIE':
@@ -50,6 +62,21 @@ var moviesReducer = (state = [], action) => {
             return state.filter((movie) => movie.id !== action.id);
         default:
             return state;
+    }
+};
+var addMovie = (title, genre) => {
+    return {
+        type: 'ADD_MOVIE',
+        movie: {
+            title,
+            genre
+        }
+    }
+};
+var removeMovie = (id) => {
+    return {
+        type: 'REMOVE_MOVIE',
+        id
     }
 };
 
@@ -73,50 +100,17 @@ var unsubscribe = store.subscribe(() => {
 
 console.log('currentState', store.getState());
 
-store.dispatch({
-    type: 'CHANGE_NAME',
-    name: 'Mayank'
-});
+store.dispatch(changeName('Mayank'));
 
 // unsubscribe();
 
-store.dispatch({
-    type: 'CHANGE_NAME',
-    name: 'Richa'
-});
+store.dispatch(changeName('Richa'));
 
-store.dispatch({
-    type: 'ADD_HOBBY',
-    hobby: 'Running'
-});
+store.dispatch(addHobby('Running'));
+store.dispatch(addHobby('Walking'));
 
-store.dispatch({
-    type: 'ADD_HOBBY',
-    hobby: 'walking'
-});
+store.dispatch(removeHobby(2));
 
-store.dispatch({
-    type: 'REMOVE_HOBBY',
-    id: 2
-});
-
-store.dispatch({
-    type: 'ADD_MOVIE',
-    movie: {
-        title: 'Delhi 6',
-        genre: 'Drama'
-    }
-});
-
-store.dispatch({
-    type: 'ADD_MOVIE',
-    movie: {
-        title: 'Mad Max',
-        genre: 'Action'
-    }
-});
-
-store.dispatch({
-    type: 'REMOVE_MOVIE',
-    id: 2
-});
+store.dispatch(addMovie('Delhi 6', 'Drama'));
+store.dispatch(addMovie('Mad Max', 'Action'));
+store.dispatch(removeMovie(2));
